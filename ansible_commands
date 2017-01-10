@@ -1,0 +1,5 @@
+sudo cp hosts_meta /etc/ansible/hosts
+ansible all -m ping
+ansible all -m copy -a "src=hosts dest=/etc/hosts" -b
+
+ansible all -a "service cloudera-scm-agent restart" -b
